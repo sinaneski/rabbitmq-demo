@@ -1,0 +1,9 @@
+server.port: 8080
+
+spring.rabbitmq.host: rabbitmq-server
+spring.rabbitmq.port: 5672
+
+rabbitmq:
+  queue-name: "spring-boot"
+  exchange-name: "spring-boot-exchange"
+  routing-key: "foo.bar.#"
