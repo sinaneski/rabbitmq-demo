@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "f3f63993-e790-4ef5-9349-b47d1c2250af",
+		"name": "rabbitmq-demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/messages",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": \"dlM3qwe9\",\n\t\"name\": \"Jane\",\n\t\"surname\": \"Winter\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/messages",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"messages"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
