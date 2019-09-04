@@ -1,0 +1,30 @@
+version: '3'
+services:
+  rabbitmq-server:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - docknet
+  mq-consumer:
+    image: mq-consumer-svc:latest
+    links:
+      - rabbitmq-server
+    ports:
+      - "8081:8081"
+    networks:
+      - docknet
+  mq-producer:
+    image: mq-producer-svc:latest
+    links:
+      - rabbitmq-server
+    ports:
+      - "8080:8080"
+    networks:
+      - docknet
+volumes:
+  logvolume01: {}
+networks:
+   docknet:
+       external: true
